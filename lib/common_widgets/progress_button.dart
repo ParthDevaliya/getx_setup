@@ -1,6 +1,7 @@
 import 'package:easy_loading_button/easy_loading_button.dart';
 import 'package:flutter/material.dart';
-import 'package:getx_setup/utils/app_colors.dart';
+
+import '../utils/app_colors.dart';
 
 class CustomProgressButton extends StatelessWidget {
   final String btnText;
@@ -21,12 +22,12 @@ class CustomProgressButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
-      ignoring: hide == true? true: false,
+      ignoring: hide == true ? true : false,
       child: EasyButton(
         type: EasyButtonType.elevated,
         idleStateWidget: Text(
           btnText.toString(),
-          style:  const TextStyle(fontSize: 18.0,color: AppColors.whiteColor),
+          style: const TextStyle(fontSize: 18.0, color: AppColors.whiteColor),
         ),
         loadingStateWidget: const CircularProgressIndicator(
           strokeWidth: 3.0,
@@ -43,7 +44,7 @@ class CustomProgressButton extends StatelessWidget {
         buttonColor: hide == true
             ? AppColors.blackColor.withOpacity(0.3)
             : color ?? AppColors.primaryColor,
-        onPressed:  onTap,
+        onPressed: onTap,
       ),
     );
   }

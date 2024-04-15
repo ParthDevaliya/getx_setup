@@ -1,9 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'preference_constant.dart';
-
-const String authToken = "authToken";
-
 class PreferenceUtils {
   static final PreferenceUtils _preferenceUtils = PreferenceUtils._internal();
 
@@ -28,7 +24,6 @@ class PreferenceUtils {
     }
     return false;
   }
-
 
 
   Future<String?> getStringPreference(String key) async {
@@ -66,21 +61,4 @@ class PreferenceUtils {
     await preferences.clear();
   }
 
-  Future<String?> getToken() async {
-    return getStringPreference(authToken);
-  }
-
-  Future<Object> getClearDriverLocList() async {
-    SharedPreferences preferences = await _getSharedPreference();
-    return preferences.remove(PreferenceConstant.driverLocList);
-  }
-
-
-  Future logOut() async {
-    SharedPreferences preferences = await _getSharedPreference();
-    await preferences.remove(PreferenceConstant.apiToken);
-    await preferences.remove(PreferenceConstant.isDispatchLogIn);
-    await preferences.remove(PreferenceConstant.isFloristLogIn);
-    // Get.offAllNamed(AppRoutes.loginScreen);
-  }
 }

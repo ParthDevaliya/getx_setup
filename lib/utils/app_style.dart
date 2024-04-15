@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getx_setup/utils/app_colors.dart';
-import 'app_strings.dart';
+
+import 'app_colors.dart';
 
 class AppStyle {
   AppStyle._();
@@ -42,22 +42,28 @@ class AppStyle {
 
   static const blackBold28 = TextStyle(
     fontSize: 28,
+    fontWeight: FontWeight.w600,
   );
 
   static const blackBold24 = TextStyle(
     fontSize: 24,
+    fontWeight: FontWeight.w600,
   );
   static const blackBold20 = TextStyle(
     fontSize: 20,
+    fontWeight: FontWeight.w600,
   );
   static const blackBold14 = TextStyle(
     fontSize: 14,
+    fontWeight: FontWeight.w600,
   );
   static const blackBold16 = TextStyle(
     fontSize: 16,
+    fontWeight: FontWeight.w600,
   );
   static const blackBold18 = TextStyle(
     fontSize: 18,
+    fontWeight: FontWeight.w600,
   );
 
   static const blackRegular28 = TextStyle(
@@ -81,20 +87,26 @@ class AppStyle {
 
   static const blackMedium28 = TextStyle(
     fontSize: 28,
+    fontWeight: FontWeight.w500,
   );
   static const blackMediumRegular24 = TextStyle(
     fontSize: 24,
+    fontWeight: FontWeight.w500,
   );
   static const blackMedium20 = TextStyle(
     fontSize: 20,
+    fontWeight: FontWeight.w500,
   );
   static const blackMedium14 = TextStyle(
     fontSize: 14,
+    fontWeight: FontWeight.w500,
   );
   static const blackMedium16 = TextStyle(
     fontSize: 16,
+    fontWeight: FontWeight.w500,
   );
   static const blackMedium18 = TextStyle(
     fontSize: 18,
+    fontWeight: FontWeight.w500,
   );
 }

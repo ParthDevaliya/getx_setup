@@ -1,13 +1,13 @@
 import '../../utils/api_endpoints.dart';
 import '../api_common_service/api_request.dart';
 
-class LoginRequest extends RemoteRequest {
-  LoginRequest({required Map<String, dynamic> request}) {
+class SignUpRequest extends RemoteRequest {
+  SignUpRequest({required Map<String, dynamic> request}) {
     initialize(request);
   }
 
   void initialize(Map<String, dynamic> request) {
-    url = ApiEndPoint.loginApi;
+    url = ApiEndPoint.signUpApi;
     requestBody = request;
     type = APIRequestType.post;
   }

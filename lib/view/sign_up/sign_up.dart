@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_setup/controller/signup_screen_controller.dart';
+import 'package:getx_setup/utils/app_routes.dart';
 import 'package:getx_setup/utils/app_style.dart';
 import '../../common_widgets/custom_scaffold.dart';
 import '../../common_widgets/custom_text_field.dart';
 import '../../common_widgets/progress_button.dart';
-import '../../controller/login_screen_controller.dart';
 import '../../utils/app_colors.dart';
-import '../../utils/app_routes.dart';
 import '../../utils/app_strings.dart';
 import '../../utils/common_methods.dart';
 
-class LoginScreen extends GetView<LoginScreenController> {
-  const LoginScreen({super.key});
+class SignUpScreen extends GetView<SignUpScreenController> {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class LoginScreen extends GetView<LoginScreenController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          AppStrings.getStarted,
+                          AppStrings.signUp,
                           style: AppStyle.blackBold24.copyWith(
                             color: AppColors.primaryColor,
                           ),
@@ -54,14 +54,14 @@ class LoginScreen extends GetView<LoginScreenController> {
                         ),
                         CustomTextField(
                           headingTitle: null,
-                          hintText: AppStrings.userName,
-                          controller: controller.userNameController.value,
+                          hintText: AppStrings.firstName,
+                          controller: controller.firstNameController.value,
                           onChanged: (value) {
                             controller.getButtonHide();
                           },
                           validator: (value) {
                             return Validators.validateFields(value,
-                                "${AppStrings.please} Enter ${AppStrings.userName}.");
+                                "${AppStrings.please} Enter ${AppStrings.firstName}.");
                           },
                         ),
                         const SizedBox(
@@ -69,20 +69,30 @@ class LoginScreen extends GetView<LoginScreenController> {
                         ),
                         CustomTextField(
                           headingTitle: null,
-                          hintText: AppStrings.password,
-                          controller: controller.passowrdController.value,
-                          isObscureText: true,
-                          obscureText: controller.isPassword.value,
+                          hintText: AppStrings.lastName,
+                          controller: controller.lastController.value,
                           onChanged: (value) {
                             controller.getButtonHide();
                           },
-                          obscureTextTap: () {
-                            controller.isPassword.value =
-                                !controller.isPassword.value;
+                          validator: (value) {
+                            return Validators.validateFields(value,
+                                "${AppStrings.please} Enter ${AppStrings.lastName}.");
+                          },
+                        ),
+                        const SizedBox(
+                          height: 25.0,
+                        ),
+                        CustomTextField(
+                          headingTitle: null,
+                          hintText: AppStrings.age,
+                          controller: controller.ageController.value,
+                          keyboardType: TextInputType.number,
+                          onChanged: (value) {
+                            controller.getButtonHide();
                           },
                           validator: (value) {
                             return Validators.validateFields(value,
-                                "${AppStrings.please} Enter ${AppStrings.password}.");
+                                "${AppStrings.please} Enter Your ${AppStrings.age}.");
                           },
                         ),
                         const SizedBox(
@@ -112,17 +122,17 @@ class LoginScreen extends GetView<LoginScreenController> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const Text(
-                             AppStrings.donthaveanaccount,
+                             AppStrings.alreadyHaveAnAccount,
                               style: TextStyle(
                                 color: Colors.black45,
                               ),
                             ),
                             GestureDetector(
                               onTap: () {
-                                 Get.toNamed(AppRoutes.signUpScreen);
+                                Get.toNamed(AppRoutes.loginScreen);
                               },
                               child: Text(
-                                AppStrings.signUp,
+                                AppStrings.signIn,
                                 style: AppStyle.blackBold16.copyWith(
                                   color: AppColors.primaryColor,
                                 ),

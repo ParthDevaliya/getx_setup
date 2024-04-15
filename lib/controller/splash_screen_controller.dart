@@ -1,5 +1,8 @@
+
 import 'package:get/get.dart';
 import '../utils/app_routes.dart';
+import '../utils/preference_constant.dart';
+import '../utils/preference_utils.dart';
 
 class SplashScreenController extends GetxController {
   @override
@@ -9,16 +12,13 @@ class SplashScreenController extends GetxController {
   }
 
   navigateScreen() async {
-    Future.delayed(const Duration(seconds: 7), () async {
-      // if (await PreferenceUtils()
-      //     .getBoolPreference(PreferenceConstant.isDispatchLogIn)) {
-      //   Get.offAndToNamed(AppRoutes.tripScreen);
-      // } else if (await PreferenceUtils()
-      //     .getBoolPreference(PreferenceConstant.isFloristLogIn)) {
-      //   Get.offAndToNamed(AppRoutes.floristHomeScreen);
-      // }else {
+    Future.delayed(const Duration(seconds: 4), () async {
+      if (await PreferenceUtils()
+          .getBoolPreference(PreferenceConstant.isLogin)) {
+        Get.offAndToNamed(AppRoutes.homeScreen);
+      }else {
       Get.offAndToNamed(AppRoutes.loginScreen);
-      // }
+      }
     });
   }
 }

@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   AppColors._();
-  static const _primaryHexColor = 0XFF0288a8;
-  static const primaryColor = Color(_primaryHexColor);
+  static const _primaryHexColor = 0xFF4D69E6;
+  static const primaryColor = Color(0xFF4D69E6);
   static const whiteColor = Color(0XFFFFFFFF);
   static const blackColor = Color(0XFF000000);
-  static const greenColor = Color(0XFF008000);
   static const redColor = Color(0XFFFF0000);
-  static const blueColor = Color(0xFF4087FC);
   static const textFieldHeadingColor = Color(0xFF616161);
   static const darkRedColor = Color(0xFFB00020);
   static const lightRedColor = Color(0xFFCF6679);
